@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Klub Sepak Bola</title>
+    <!-- Font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <head>
+    <!-- Tag head lainnya milikmu... -->
+
+    <style>
+      
+        /* ... Kode CSS kamu yang lama ... */
+
+
+        /* === TAMBAHKAN KODE EFEK KLIK DI SINI === */
+        .contact-box a {
+            transition: all 0.15s ease-in-out !important;
+        }
+
+        .contact-box a:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .contact-box a:active {
+            transform: scale(0.96) translateY(0) !important;
+            opacity: 0.85;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        /* ======================================= */
+
+    </style>
+</head>
+
+    <style>
+      
+        /* =========================================================
+           1. VARIABEL WARNA & STYLE DASAR (Gampang diubah di sini)
+           ========================================================= */
+        :root {
+            --primary-red: #d32f2f;
+            --dark-red: #9a0007;
+            --pure-white: #ffffff;
+            --off-white: #f8f9fa;
+            --dark-text: #1a1a1a;
+            --gray-text: #666666;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           2. NAVBAR & HEADER
+           ========================================================= */
+        .navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column; /* Menyusun logo dan menu ke bawah rapi di HP */
+    align-items: center;
+    gap: 12px;
+    padding: 15px 5%;
+    position: relative;
+    z-index: 1000;
+    overflow: hidden;
+    border-bottom: 3px solid var(--primary-red);
+}
+/* Teks Logo Menyala Putih */
+.logo-text {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Tata Letak Menu Menggunakan Grid Sejajar */
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Otomatis membagi jadi 3 kolom rata presisi */
+    gap: 8px;
+    width: 100%;
+    max-width: 360px; /* Menjaga agar tidak terlalu lebar di layar HP */
+    padding: 0;
+    margin: 8px auto 0 auto;
+    list-style: none;
+}
+
+/* Layout Grid 2 Kolom Sejajar Presisi */
+.nav-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Bagi jadi 2 kolom sama besar */
+    gap: 8px 10px !important;
+    width: 100% !important;
+    max-width: 320px !important; /* Kunci lebar grid di HP */
+    padding: 0 !important;
+    margin: 8px auto 0 auto !important;
+    list-style: none !important;
+}
+
+/* Biar Tombol Terakhir (Contact) Otomatis Melebar & Pas di Tengah */
+.nav-links li:last-child:nth-child(odd) {
+    grid-column: span 2;
+}
+
+/* Kunci Ukuran Semua Tombol Supaya Presisi */
+.btn-nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 36px !important; /* Kunci tinggi tombol biar tegak lurus */
+    padding: 0 10px !important;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-sizing: border-box !important;
+    transition: all 0.2s ease;
+}
+
+.btn-nav:hover, 
+.btn-nav:active {
+    background: var(--primary-red, #d32f2f) !important;
+    border-color: var(--primary-red, #d32f2f) !important;
+}
+
+        }
+
+        .logo-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-bottom: 4px !important;
+}
+
+.logo-img {
+    width: 42px !important;
+    height: 42px !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    padding: 3px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+
+.logo-text {
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+    line-height: 1 !important;
+}
+
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .btn-nav {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-red);
+            color: var(--pure-white);
+        }
+
+        /* =========================================================
+           3. BANNER / HERO SECTION
+           ========================================================= */
+        .banner {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(154,0,7,0.7)), url('banner.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--pure-white);
+            padding: 0 20px;
+        }
+
+        .banner h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================================
+           4. LAYOUT SEKSI UMUM
+           ========================================================= */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-red);
+            display: block;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .card {
+            background: var(--pure-white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        /* =========================================================
+           5. SQUAD & GALERI (GRID SYSTEM)
+           ========================================================= */
+        .squad-category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: var(--dark-red);
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .player-card, .gallery-card {
+            background: var(--pure-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .player-card:hover, .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .player-img, .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .player-info, .gallery-info {
+            padding: 15px;
+        }
+
+        .player-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark-text);
+        }
+
+      
+        /* =========================================================
+           6. JADWAL TABLE & CONTACT
+           ========================================================= */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .schedule-table th {
+            background-color: var(--primary-red);
+            color: var(--pure-white);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .schedule-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-box {
+            background: var(--primary-red);
+            color: var(--pure-white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-box a {
+            color: var(--pure-white);
+            font-weight: bold;
+        }
+
+        /* Responsive Layout untuk Mobile */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .banner h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =========================================================
+       HEADER / NAVIGATION
+       ========================================================= -->
+    <nav class="navbar">
+      <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.5;">
+    <source src="video-header.mp4" type="video/mp4">
+</video>
+
+
+        <div class="logo-container">
+            <!-- Ganti src logo di bawah ini -->
+            <img src="logo.png" alt="Logo Klub" class="logo-img">
+            <span class="logo-text">COT KUTA</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#visimisi" class="btn-nav">Visi Misi</a></li>
+            <li><a href="#riwayatpertandingan" class="btn-nav">Riwayat</a></li>
+            <li><a href="#pembinaan" class="btn-nav">Pembinaan</a></li>
+            <li><a href="#jadwal" class="btn-nav">Jadwal</a></li>
+            <li><a href="#squad" class="btn-nav">Squad</a></li>
+            <li><a href="#galeri" class="btn-nav">Prestasi</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- =========================================================
+       BANNER SECTION
+       ========================================================= -->
+    <section class="banner">
+        <h1>COT KUTA</h1>
+        <p>Semangat Berprestasi Tanpa Batas</p>
+    </section>
+
+    <div class="container">
+
+        <!-- =========================================================
+           VISI & MISI
+           ========================================================= -->
+        <section id="visimisi">
+            <h2 class="section-title">Visi & Misi</h2>
+            <div class="card">
+                <h3 style="color: var(--primary-red); margin-bottom: 10px;">Visi</h3>
+                <p>Menjadi klub sepak bola profesional yang mencetak pemain berbakat, berkarakter, dan berdaya saing tinggi di tingkat nasional maupun internasional.</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--primary-red); margin-bottom: 10px;">Misi</h3>
+                <ul style="margin-left: 20px;">
+                    <li>Menyelenggarakan pembinaan usia muda yang terstruktur dan berkelanjutan.</li>
+                    <li>Membangun mentalitas juara berlandaskan sportivitas dan disiplin.</li>
+                    <li>Fasilitasi pengembangan bakat melalui kompetisi berkala.</li>
+                </ul>
+            </div>
+        </section>
+
+<!-- =========================================================
+           Riwayat
+           ========================================================= -->
+        <section id="riwayatpertandingan">
+            <h2 class="section-title">Riwayat Pertandingan</h2>
+            <div class="squad-category">
+                <h3 class="category-title">Turnamen Futsal WBL Cup 2026</h3>
+                <div class="grid-2">
+                    <div class="gallery-card">
+                        <img src="tanding1.jpg" alt="Champion WBL 1" class="gallery-img">
+                        <div class="gallery-info">
+                            <p style="font-weight:600;">2-1 Win Cot Kuta</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="tanding2.jpg" alt="Champion WBL 2" class="gallery-img">
+                        <div class="gallery-info">
+                            <p style="font-weight:600;">4-5 (Pinalti) Win Cot Kuta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        <!-- =========================================================
+           STRUKTUR & PEMBINAAN
+           ========================================================= -->
+        <section id="pembinaan">
+            <h2 class="section-title">Struktur & Pembinaan</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 style="color: var(--primary-red);">Manajemen Klub</h3>
+                    <p><strong>Ketua Umum:</strong> Abdul Razaq</p>
+                    <p><strong>Coach:</strong> Ulkaf Ari Anggara</p>
+                    <p><strong>Asisten Coach:</strong> Muhammad Fazil</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-red);">Program Pembinaan</h3>
+                    <p><strong>Sepak Bola:</strong> Fokus pada peningkatan fisik terprogram, taktik posisi bermain, kerjasama tim, serta keikutsertaan dalam kompetisi terarah.</p>
+                    <p><strong>Futsal:</strong> Memahami sistem rotasi pemain, positioning, serta variasi formasi bertahan dan menyerang.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+           JADWAL LATIHAN
+           ========================================================= -->
+        <section id="jadwal">
+            <h2 class="section-title">Jadwal Latihan</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Waktu</th>
+                        <th>Kategori</th>
+                        <th>Lokasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Selasa</td>
+                        <td>15:30 - 17:00 WIB</td>
+                        <td>Akademi (U-12 / U-15)</td>
+                        <td>Lapangan Gampong Darat</td>
+                    </tr>
+                    <tr>
+                        <td>Kamis</td>
+                        <td>15:30 - 17:00 WIB</td>
+                        <td>Akademi (U-12 / U-15)</td>
+                        <td>Lapangan Gampong Darat</td>
+                    </tr>
+                    <tr>
+                        <td>Sabtu</td>
+                        <td>15:30 - 17:00 WIB</td>
+                        <td>Seluruh Kategori (Sparing/Fisik)</td>
+                        <td>Lapangan Gampong Darat</td>
+                    </tr>
+                    <tr>
+                        <td>Minggu</td>
+                        <td>09:00 - 10:00 WIB</td>
+                        <td>Futsal (Sparing/Latihan)</td>
+                        <td>Adma Futsal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- =========================================================
+           DAFTAR SQUAD (Ganti URL Foto 1-16 sesuai foto pemain)
+           ========================================================= -->
+        <section id="squad">
+            <h2 class="section-title">Daftar Squad</h2>
+
+            <!-- Goal Kiper -->
+            <div class="squad-category">
+                <h3 class="category-title">Goal Kiper</h3>
+                <div class="grid-2">
+                    <div class="player-card">
+                        <img src="jawahir.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Jawahir Rizki (GK)</div></div>
+                    </div>
+                    <div class="player-card">
+                        <img src="sani.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Muhammad Sani (GK)</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Defender -->
+            <div class="squad-category">
+                <h3 class="category-title">Defender</h3>
+                <div class="grid-2">
+                    <div class="player-card">
+                        <img src="dede.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Dede Januar (CB)</div></div>
+                    </div>
+                    <div class="player-card">
+                        <img src="fahri.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Muhammad Fahri (CB)</div></div>
+                    </div>
+                </div>
+            </div>
+          
+                <div class="grid-2">
+                    <div class="player-card">
+                        <img src="reza.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Muhammad Reza (LWB)</div></div>
+                    </div>
+                    <div class="player-card">
+                        <img src="gtau.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">? (RWB)</div></div>
+                    </div>
+                </div>
+            </>
+
+            <!-- Defensive Midfielders -->
+            <div class="squad-category">
+                <h3 class="category-title">Defensive Midfielders</h3>
+                <div class="grid-2">
+                    <div class="player-card">
+                        <img src="madan.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Syarif Ramadhan (DMF)</div></div>
+                    </div>
+                    <div class="player-card">
+                        <img src="lutfi.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Muhammad Affrilian Lutfi (DMF)</div></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Winger -->
+            <div class="squad-category">
+                <h3 class="category-title">Winger</h3>
+                <div class="grid-2">
+                    <div class="player-card">
+                        <img src="fiki.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Fiki Riyandi (RW)</div></div>
+                    </div>
+                    <div class="player-card">
+                        <img src="fadelil.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">ZulFazelillah (LW)</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Striker -->
+            <div class="squad-category">
+                <h3 class="category-title">Striker</h3>
+                <div class="grid-2">
+                    <div class="player-card">
+                        <img src="juan.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Muhammad Juan (ST)</div></div>
+                    </div>
+                    <div class="player-card">
+                        <img src="arif.jpg" class="player-img">
+                        <div class="player-info"><div class="player-name">Almuarief (ST)</div></div>
+                    </div>
+                </div>
+            </div>
+
+      </section>
+
+        <!-- =========================================================
+           GALERI PRESTASI
+           ========================================================= -->
+        <section id="galeri">
+            <h2 class="section-title">Galeri Prestasi</h2>
+            <div class="squad-category">
+                <h3 class="category-title">Champion WBL</h3>
+                <div class="grid-2">
+                    <div class="gallery-card">
+                        <img src="prestasi1.jpg" alt="Champion WBL 1" class="gallery-img">
+                        <div class="gallery-info">
+                            <p style="font-weight:600;">Juara 1 Tournament WBL</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="prestasi2.jpg" alt="Champion WBL 2" class="gallery-img">
+                        <div class="gallery-info">
+                            <p style="font-weight:600;">Penyerahan Piala WBL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+          
+            <div class="squad-category">
+                <h3 class="category-title">Penghargaan Individu</h3>
+                <div class="grid-2">
+                    <div class="gallery-card">
+                        <img src="prestasi3.jpg" alt="Champion WBL 1" class="gallery-img">
+                        <div class="gallery-info">
+                            <p style="font-weight:600;">Top Score</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="prestasi4.jpg" alt="Best Player" class="gallery-img">
+                        <div class="gallery-info">
+                            <p style="font-weight:600;">Best Player</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+                <h3 class="category-title">Pengangkatan Piala</h3>
+              
+                    <div class="gallery-card">
+    <video class="gallery-img" autoplay loop muted playsinline>
+        <source src="piala.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+    </video>
+    <div class="gallery-info">
+        <p style="font-weight:600;">Champion 🏆</p>
+    </div>
+</div>
+
+        </>
+          
+        <!-- =========================================================
+                   <!-- Tutup div pembungkus utama/container SEBELUM contact atau footer -->
+        </div> 
+
+        <!-- SECTION CONTACT -->
+        <section id="contact" style="padding: 40px 0; text-align: center; width: 100%;">
+            <h2 class="section-title">CONTACT US</h2>
+            
+            <div class="contact-box" style="background-color: #d32f2f; color: #ffffff; padding: 25px 15px; border-radius: 16px; max-width: 90%; margin: 20px auto; box-sizing: border-box; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+    <h3 style="margin-bottom: 8px; font-size: 1.1rem; color: #ffffff;">Ingin Bergabung atau Mengadakan Sparing?</h3>
+    <p style="margin-bottom: 20px; font-size: 0.85rem; color: #e0e0e0;">Hubungi kami melalui media sosial atau kontak di bawah ini:</p>
+
+    <!-- Tombol WhatsApp 1 -->
+    <a href="https://wa.me/6285191137823" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; color: white; padding: 12px 16px; border-radius: 12px; margin-bottom: 12px; text-decoration: none; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;">
+        <!-- Ikon WhatsApp SVG -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/></svg>
+        <span>WhatsApp (Admin 1)</span>
+    </a>
+
+    <!-- Tombol WhatsApp 2 -->
+    <a href="https://wa.me/6285182030691" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; color: white; padding: 12px 16px; border-radius: 12px; margin-bottom: 12px; text-decoration: none; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;">
+        <!-- Ikon WhatsApp SVG -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/></svg>
+        <span>WhatsApp (Admin 2)</span>
+    </a>
+
+    <!-- Tombol TikTok -->
+<a href="https://tiktok.com/@cotkutafcgampongdarat" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #000000; color: white; padding: 12px 16px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.2s;">
+    <!-- Ikon TikTok SVG -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.31 1.54-1.28 2.53.01 1.01.52 1.97 1.35 2.52.88.58 2.03.62 2.95.21.91-.39 1.56-1.25 1.71-2.23.03-.38.04-.76.04-1.14V.02z"/>
+    </svg>
+    <span>@cotkutafcgampongdarat</span>
+</a>
+
+</div>
+          
+        </section>
+
+        <!-- FOOTER (Di luar container, pasti 100% penuh layar) -->
+        <footer style="background-color: #1a1a1a; color: #ffffff; text-align: center; padding: 20px 10px; font-size: 0.85rem; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; box-sizing: border-box;">
+            <p style="margin: 0;">&copy; 2026 Cot Kuta. All Rights Reserved. Semangat Berprestasi!</p>
+        </footer>
+
+    </body>
+</html>
